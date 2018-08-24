@@ -1,0 +1,12 @@
+---- Iniciando o teste ----
+
+[STEP1]Link alcançado com sucesso
+
+[STEP2]Menu rastreamento alcançado com sucesso
+
+[STEP3]Consultando o dado informado
+
+[STEP4]Dado encontrado com sucesso
+
+---- Encerrando o teste ----
+

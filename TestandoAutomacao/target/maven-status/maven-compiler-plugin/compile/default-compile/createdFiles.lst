@@ -1,0 +1,6 @@
+br\com\vinicius\util\LogBuilder.class
+br\com\vinicius\objects\Objects.class
+br\com\vinicius\test\TestandoSiteCorreiosRastreamentoInvalido.class
+br\com\vinicius\util\DirectoryBuilder.class
+br\com\vinicius\util\WebDriverConfigure.class
+br\com\vinicius\util\ScreenShotBuilder.class
