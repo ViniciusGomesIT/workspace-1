@@ -1,1 +1,13 @@
-/workspace-1/target
+/target
+*/.settings/*
+*/META-INF/*
+
+**/target/**
+
+*.class
+*.project
+*.classpath
+*.properties
+*README.md
+
+*.gitignore
