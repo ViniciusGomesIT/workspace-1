@@ -11,3 +11,8 @@
 *README.md
 
 *.gitignore
+*.xml
+*.properties
+*.settings
+*.MF
+*/clasees/*
