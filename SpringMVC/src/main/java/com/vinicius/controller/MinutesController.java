@@ -9,8 +9,8 @@ public class MinutesController {
 
 	@RequestMapping(value="/show-minutes")
 	public String calculateAndShowMinutes(Model model) {
-		int g = 1;
-		for (int i = 1; i <= 100; i++) {
+		Long g = 1L;
+		for (int i = 1; i <= 10; i++) {
 			g = g * i;
 		}
 
