@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Show Minutes</title>
 </head>
-<body>
+<body bgcolor="grey">
 	<h4 align="center" style="color: red">
 		The result is: ${minutes}
 	</h4>
