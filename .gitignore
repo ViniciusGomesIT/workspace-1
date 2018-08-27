@@ -1,18 +1,10 @@
-/target
-*/.settings/*
-*/META-INF/*
+target/
+!.mvn/wrapper/maven-wrapper.jar
 
-**/target/**
-
-*.class
-*.project
-*.classpath
-*.properties
-*README.md
-
-*.gitignore
-*.xml
-*.properties
-*.settings
-*.MF
-*/clasees/*
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
