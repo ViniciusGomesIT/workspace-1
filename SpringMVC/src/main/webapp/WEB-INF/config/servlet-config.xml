@@ -21,5 +21,9 @@
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
 	p:prefix="/WEB-INF/jsp/" 
 	p:suffix=".jsp" />
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+	p:prefix="/pdfs/" 
+	p:suffix=".pdf" />
 
 </beans>

@@ -18,6 +18,11 @@
 		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 	
+	<servlet-mapping>
+		<servlet-name>springMVCServlet</servlet-name>
+		<url-pattern>/pdfs/**</url-pattern>
+	</servlet-mapping>
+	
 	<display-name>Spring MVC Course</display-name>	
 	
 </web-app>
