@@ -1,3 +1,0 @@
-dbUsername=username
-dbPassword=password
-urlPath=System.getProperty("user.dir")
