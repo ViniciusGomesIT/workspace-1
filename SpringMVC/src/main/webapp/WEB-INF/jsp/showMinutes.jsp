@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,20 +11,21 @@
 </head>
 <body bgcolor="grey">
 	<form:form modelAttribute="exercise">
+	<!-- parâmetro usado(mapeado) no interceptor -->
+	Language: <a href="?language=en">English</a> | <a href="?language=es">Spanish</a> 
 		<table>
 			<tr>
-				<td>Minutes to start calculate:</td>
-				<td><form:input path="minutes"/></td>
+				<td><spring:message code="message.default"/></td>
+				<td><form:input path="minutes" /></td>
 			</tr>
 			<tr>
-				<td colspan="2">
-					<input type="submit" value="Enter Exercise" />
+				<td colspan="2"><input type="submit" value="Enter Exercise" />
 				</td>
 			</tr>
 		</table>
 	</form:form>
-<!-- 	<h4 align="center" style="color: red"> -->
-<%-- 		The result is: ${exercise.minutes} --%>
-<!-- 	</h4> -->
+	<!-- 	<h4 align="center" style="color: red"> -->
+	<%-- 		The result is: ${exercise.minutes} --%>
+	<!-- 	</h4> -->
 </body>
 </html>

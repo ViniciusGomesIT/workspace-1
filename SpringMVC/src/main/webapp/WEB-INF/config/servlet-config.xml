@@ -9,7 +9,47 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 	<mvc:annotation-driven/>
+	
 	<context:component-scan base-package="com.vinicius.controller"/>
+	
+<!-- 	<context:property-placeholder location="classpath:messages.properties"/> -->
+	
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+			p:paramName="language"> <!-- objeto que é mapeado como parâmetro para mudança. Geralmente na URL -->
+		</bean>
+	</mvc:interceptors>
+	
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver"
+		p:defaultLocale="en">
+	</bean>
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages">
+	</bean>
+	
+<!-- <bean id="messageSource" -->
+<!--     class="org.springframework.context.support.ReloadableResourceBundleMessageSource"> -->
+<!--     <property name="basenames"> -->
+<!--         <list> -->
+<!--             <value>src/main/resources/</value> -->
+<!--         </list> -->
+<!--     </property> -->
+<!-- </bean> -->
+
+<!-- <bean id="localeChangeInterceptor" -->
+<!--     class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"> -->
+<!--     <property name="paramName" value="language" /> -->
+<!-- </bean> -->
+
+<!-- <bean id="localeResolver" -->
+<!--     class="org.springframework.web.servlet.i18n.CookieLocaleResolver"> -->
+<!--     <property name="defaultLocale" value="en" /> -->
+<!-- </bean> -->
+	
+	
 	
 <!-- 	More detailed and long form to declarate where our controller can get a jsp pages -->
 <!-- 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
