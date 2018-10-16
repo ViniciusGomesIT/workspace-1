@@ -12,44 +12,32 @@
 	
 	<context:component-scan base-package="com.vinicius.controller"/>
 	
+	<!-- Propriedade para mapear o arquivo de properties -->
 <!-- 	<context:property-placeholder location="classpath:messages.properties"/> -->
 	
+	<!-- Interceptador de localidade, através do parâmetro consegue recuperar os arquivos -->
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
 			p:paramName="language"> <!-- objeto que é mapeado como parâmetro para mudança. Geralmente na URL -->
 		</bean>
 	</mvc:interceptors>
 	
+	<!-- Propriedade para resolver e setar a localidade default -->
+	<!-- Para o default, pega o arquivo que não houver sufixo -->
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver"
 		p:defaultLocale="en">
 	</bean>
 	
+	<!-- Propriedade para mapear os arquivos usados para o interceptador de localidade -->
+	<!-- Necessário estar na pasta resources, para setar outro local, necessário adicionar parâmetro -->
+	<!-- Usa como prefixo o parâmetro basename e adiciona o parametro do interceptor -->
+	<!-- É necessário que os arquivos estejam com "_" separando o prefixo e o sufixo obtido do interceptor -->
+	<!-- Utilizado para internacionalização nesse caso -->
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource"
 		p:basename="messages">
 	</bean>
-	
-<!-- <bean id="messageSource" -->
-<!--     class="org.springframework.context.support.ReloadableResourceBundleMessageSource"> -->
-<!--     <property name="basenames"> -->
-<!--         <list> -->
-<!--             <value>src/main/resources/</value> -->
-<!--         </list> -->
-<!--     </property> -->
-<!-- </bean> -->
-
-<!-- <bean id="localeChangeInterceptor" -->
-<!--     class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"> -->
-<!--     <property name="paramName" value="language" /> -->
-<!-- </bean> -->
-
-<!-- <bean id="localeResolver" -->
-<!--     class="org.springframework.web.servlet.i18n.CookieLocaleResolver"> -->
-<!--     <property name="defaultLocale" value="en" /> -->
-<!-- </bean> -->
-	
-	
 	
 <!-- 	More detailed and long form to declarate where our controller can get a jsp pages -->
 <!-- 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
