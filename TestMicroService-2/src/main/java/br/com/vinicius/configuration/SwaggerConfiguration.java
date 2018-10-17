@@ -24,7 +24,7 @@ public class SwaggerConfiguration {
           .apiInfo(apiInfo())
           .directModelSubstitute(LocalDate.class, Date.class)
           .select()                                  
-          .apis(RequestHandlerSelectors.basePackage("br.com.vinicius"))
+          .apis(RequestHandlerSelectors.basePackage("br.com.vinicius.controller"))
           .paths(PathSelectors.any())
           .build();
       
