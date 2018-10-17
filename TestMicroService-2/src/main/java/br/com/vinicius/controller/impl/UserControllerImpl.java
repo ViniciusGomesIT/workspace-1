@@ -32,8 +32,6 @@ public class UserControllerImpl implements UserResources {
 	})
 	@ApiOperation(value = "Recupera os dados dos usuários.")
 	public ResponseEntity<User> getUserInfo() {
-		System.out.println(service.getUserInfo());
-
 		return new ResponseEntity<User>(service.getUserInfo(), HttpStatus.OK);
 	}
 

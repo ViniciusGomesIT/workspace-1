@@ -19,6 +19,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUserInfo() {
 		System.out.println(String.format("Data: %s", data) );
+		System.out.println(String.format("User: %s", user));
 
 		return user;
 	}
