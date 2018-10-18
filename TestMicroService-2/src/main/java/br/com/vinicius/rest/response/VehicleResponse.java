@@ -15,6 +15,10 @@ public class VehicleResponse {
 		this.description = description;
 	}
 	
+	public VehicleResponse() {
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -28,10 +32,10 @@ public class VehicleResponse {
 		this.description = description;
 	}
 	
-	public List<VehicleResponse> convert(List<VehicleResponse> values) {
+	public List<VehicleResponse> convert(List<Vehicle> values) {
 		return values
 				.stream()
-				.map(vehicle -> new VehicleResponse(vehicle.id, vehicle.getDescription()))
+				.map(vehicle -> new VehicleResponse(vehicle.getId(), vehicle.getDescription()))
 				.collect(Collectors.toList());
 	}
 	

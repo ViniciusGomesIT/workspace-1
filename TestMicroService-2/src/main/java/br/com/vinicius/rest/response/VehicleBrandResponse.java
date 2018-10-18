@@ -7,12 +7,18 @@ import br.com.vinicius.model.VehicleBrand;
 
 public class VehicleBrandResponse {
 	
+	//TODO implementar padrão build e alterar o controller;
+	
 	private Long id;
 	private String description;
 	
 	public VehicleBrandResponse(Long id, String description) {
 		this.id = id;
 		this.description = description;
+	}
+	
+	public VehicleBrandResponse() {
+
 	}
 	
 	public Long getId() {
