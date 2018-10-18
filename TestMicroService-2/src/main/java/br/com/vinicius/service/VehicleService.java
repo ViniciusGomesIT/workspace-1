@@ -9,5 +9,6 @@ public interface VehicleService {
 	
 	public List<VehicleBrand> getAllVehicleBrand();
 	
-	public List<Vehicle> getPersonVehicles();
+	// TODO realocar para o endpoint do usuário
+//	public List<Vehicle> getPersonVehicles();
 }

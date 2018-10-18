@@ -32,15 +32,16 @@ public interface VehicleResource {
 		method = RequestMethod.GET)
 	ResponseEntity<List<VehicleBrandResponse>> getAllVehicleBrand();
 
-	@ApiResponses({ 
-		@ApiResponse(code = 201, message = "Created", response = VehicleBrandResponse.class),
-		@ApiResponse(code = 400, message = "Bad Request"),
-		@ApiResponse(code = 404, message = "Not Found"),
-		@ApiResponse(code = 500, message = "Internal Server Error"),
-	})
-	@ApiOperation(value = "Retorna a lista de veículos do usuário")
-	@RequestMapping(value = "/vehicle-person", 
-		method = RequestMethod.POST, 
-		consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	ResponseEntity<List<VehicleResponse>> getPersonVehicle(@RequestBody @Valid VehiclePersonRequest request);
+	//TODO realocar para o endpoint do usuário
+//	@ApiResponses({ 
+//		@ApiResponse(code = 201, message = "Created", response = VehicleBrandResponse.class),
+//		@ApiResponse(code = 400, message = "Bad Request"),
+//		@ApiResponse(code = 404, message = "Not Found"),
+//		@ApiResponse(code = 500, message = "Internal Server Error"),
+//	})
+//	@ApiOperation(value = "Retorna a lista de veículos do usuário")
+//	@RequestMapping(value = "/vehicle-person", 
+//		method = RequestMethod.POST, 
+//		consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+//	ResponseEntity<List<VehicleResponse>> getPersonVehicle(@RequestBody @Valid VehiclePersonRequest request);
 }

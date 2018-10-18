@@ -30,11 +30,12 @@ public class VehicleControllerImpl implements VehicleResource {
 					.convert( service.getAllVehicleBrand() ), HttpStatus.OK );	
 	}
 
-	@Override
-	public ResponseEntity<List<VehicleResponse>> getPersonVehicle(@Valid VehiclePersonRequest request) {
-		return new ResponseEntity<List<VehicleResponse>>( VehicleResponseBuilder
-					.vehicleResponseBuilder()
-					.convert( service.getPersonVehicles() ), HttpStatus.OK );
-	}
+	//TODO realocar para o controller do usuário
+//	@Override
+//	public ResponseEntity<List<VehicleResponse>> getPersonVehicle(@Valid VehiclePersonRequest request) {
+//		return new ResponseEntity<List<VehicleResponse>>( VehicleResponseBuilder
+//					.vehicleResponseBuilder()
+//					.convert( service.getPersonVehicles() ), HttpStatus.OK );
+//	}
 
 }
