@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
+import br.com.vinicius.builder.VehicleBrandResponseBuilder;
+import br.com.vinicius.builder.VehicleResponseBuilder;
 import br.com.vinicius.rest.request.VehiclePersonRequest;
 import br.com.vinicius.rest.resource.VehicleResource;
 import br.com.vinicius.rest.response.VehicleBrandResponse;
@@ -23,12 +25,16 @@ public class VehicleControllerImpl implements VehicleResource {
 
 	@Override
 	public ResponseEntity<List<VehicleBrandResponse>> getAllVehicleBrand() {
-		return new ResponseEntity<List<VehicleBrandResponse>>(new VehicleBrandResponse().convert(service.getAllVehicleBrand()), HttpStatus.OK);
+		return new ResponseEntity<List<VehicleBrandResponse>>( VehicleBrandResponseBuilder
+					.vehicleBrandResponseBuilder()
+					.convert( service.getAllVehicleBrand() ), HttpStatus.OK );	
 	}
 
 	@Override
 	public ResponseEntity<List<VehicleResponse>> getPersonVehicle(@Valid VehiclePersonRequest request) {
-		return new ResponseEntity<List<VehicleResponse>>(new VehicleResponse().convert(service.getPersonVehicles()), HttpStatus.OK);
+		return new ResponseEntity<List<VehicleResponse>>( VehicleResponseBuilder
+					.vehicleResponseBuilder()
+					.convert( service.getPersonVehicles() ), HttpStatus.OK );
 	}
 
 }
