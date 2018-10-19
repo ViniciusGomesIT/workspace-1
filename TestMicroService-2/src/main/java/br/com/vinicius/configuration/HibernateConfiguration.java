@@ -21,11 +21,30 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/*
+[1] This is the central interface in Spring's transaction infrastructure. Applications can use this directly, 
+but it is not primarily meant as API: Typically, applications will work with either TransactionTemplate or 
+declarative transaction demarcation through AOP.
+For implementors, it is recommended to derive from the provided AbstractPlatformTransactionManager class, 
+which pre-implements the defined propagation behavior and takes care of transaction synchronization handling. 
+Subclasses have to implement template methods for specific states of the underlying transaction, for example: 
+begin, suspend, resume, commit.
+
+The default implementations of this strategy interface are JtaTransactionManager and DataSourceTransactionManager, 
+which can serve as an implementation guide for other transaction strategies. 
+ */
+
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
+		//Configures the name of the EntityManagerFactory bean definition to be used to create repositories 
+		//discovered through this annotation. Defaults to entityManagerFactory.
         entityManagerFactoryRef = "entityManagerFactory",
+        //Configures the name of the PlatformTransactionManager[1] bean definition to be used to create repositories 
+        //discovered through this annotation. Defaults to transactionManager.
         transactionManagerRef = "transactionManager",
+        //Base packages to scan for annotated >> components. << value() is an alias for (and mutually exclusive with) this attribute. 
+        //Use basePackageClasses() for a type-safe alternative to String-based package names.
         basePackages = {"com.viverebrasil.financeira.repository"})
 public class HibernateConfiguration {
 	
