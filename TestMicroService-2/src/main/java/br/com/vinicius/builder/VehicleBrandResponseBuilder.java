@@ -9,7 +9,7 @@ import br.com.vinicius.rest.response.VehicleBrandResponse;
 public class VehicleBrandResponseBuilder {
 
 	private Long id;
-	private String description;
+	private String nome;
 	
 	public static VehicleBrandResponseBuilder vehicleBrandResponseBuilder() {
 		return new VehicleBrandResponseBuilder();
@@ -20,8 +20,8 @@ public class VehicleBrandResponseBuilder {
 		return this;
 	}
 	
-	public VehicleBrandResponseBuilder description(String description) {
-		this.description = description;
+	public VehicleBrandResponseBuilder nome(String nome) {
+		this.nome = nome;
 		return this;
 	}
 	
@@ -30,7 +30,7 @@ public class VehicleBrandResponseBuilder {
 				.stream()
 				.map(vehicleBrand -> vehicleBrandResponseBuilder()
 						.id(vehicleBrand.getId())
-						.description(vehicleBrand.getDescription())
+						.nome(vehicleBrand.getNome())
 						.build())
 				.collect(Collectors.toList());
 	}
@@ -38,7 +38,7 @@ public class VehicleBrandResponseBuilder {
 	public VehicleBrandResponse convert(VehicleBrand value) {
 		return vehicleBrandResponseBuilder()
 				.id(value.getId())
-				.description(value.getDescription())
+				.nome(value.getNome())
 				.build();
 	} 
 	
@@ -46,7 +46,7 @@ public class VehicleBrandResponseBuilder {
 		VehicleBrandResponse response = new VehicleBrandResponse();
 		
 		response.setId(this.id);
-		response.setDescription(this.description);
+		response.setNome(this.nome);
 		
 		return response;
 	}

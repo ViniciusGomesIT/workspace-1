@@ -16,8 +16,8 @@ public class VehicleBrand {
 	@Column(name = "id", nullable = false, unique = true)
 	private Long id;
 	
-	@Column(name = "description", nullable = false)
-	private String description;
+	@Column(name = "nome", nullable = false)
+	private String nome;
 
 	public Long getId() {
 		return id;
@@ -27,12 +27,12 @@ public class VehicleBrand {
 		this.id = id;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 }

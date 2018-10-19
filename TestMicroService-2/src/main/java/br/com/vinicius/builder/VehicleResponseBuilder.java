@@ -4,12 +4,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import br.com.vinicius.model.Vehicle;
+import br.com.vinicius.model.VehicleBrand;
 import br.com.vinicius.rest.response.VehicleResponse;
 
 public class VehicleResponseBuilder {
 	
 	private Long id;
-	private String description;
+	private String modeloVeic;
+	private int anoFabricacao;
+	private int anoModelo;
+	private String cor;
+	private VehicleBrand marca;
 	
 	public static VehicleResponseBuilder vehicleResponseBuilder() {
 		return new VehicleResponseBuilder();
@@ -20,8 +25,28 @@ public class VehicleResponseBuilder {
 		return this;
 	}
 	
-	public VehicleResponseBuilder description(String description) {
-		this.description = description;
+	public VehicleResponseBuilder modeloVeic(String modeloVeic) {
+		this.modeloVeic = modeloVeic;
+		return this;
+	}
+	
+	public VehicleResponseBuilder anoFabricacao(int anoFabricacao) {
+		this.anoFabricacao = anoFabricacao;
+		return this;
+	}
+	
+	public VehicleResponseBuilder anoModelo(int anoModelo) {
+		this.anoModelo = anoModelo;
+		return this;
+	}
+	
+	public VehicleResponseBuilder vehicleBrand(VehicleBrand marca) {
+		this.marca = marca;
+		return this;
+	}
+	
+	public VehicleResponseBuilder cor(String cor) {
+		this.cor = cor;
 		return this;
 	}
 	
@@ -30,7 +55,10 @@ public class VehicleResponseBuilder {
 				.stream()
 				.map( vehicle -> vehicleResponseBuilder()
 						.id(vehicle.getId())
-						.description(vehicle.getDescription())
+						.modeloVeic(vehicle.getModeloVeic())
+						.anoFabricacao(vehicle.getAnoFabricacao())
+						.anoModelo(vehicle.getAnoModelo())
+						.vehicleBrand(vehicle.getMarca())
 						.build() )
 				.collect(Collectors.toList());
 	}
@@ -38,7 +66,10 @@ public class VehicleResponseBuilder {
 	public VehicleResponse convert(Vehicle value) {
 		return vehicleResponseBuilder()
 				.id(value.getId())
-				.description(value.getDescription())
+				.modeloVeic(value.getModeloVeic())
+				.anoFabricacao(value.getAnoFabricacao())
+				.anoModelo(value.getAnoModelo())
+				.vehicleBrand(value.getMarca())
 				.build();
 	}
 	
@@ -46,7 +77,11 @@ public class VehicleResponseBuilder {
 		VehicleResponse response = new VehicleResponse();
 		
 		response.setId(this.id);
-		response.setDescription(this.description);
+		response.setModeloVeic(this.modeloVeic);
+		response.setAnoFabricacao(this.anoFabricacao);
+		response.setAnoModelo(this.anoModelo);
+		response.setCor(this.cor);
+		response.setMarca(this.marca);
 		
 		return response;
 	}

@@ -3,21 +3,13 @@ package br.com.vinicius.rest.response;
 public class VehicleBrandResponse {
 
 	private Long id;
-	private String description;
-
-	public Long getId() {
-		return id;
-	}
+	private String nome;
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 }

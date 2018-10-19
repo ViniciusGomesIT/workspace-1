@@ -41,8 +41,17 @@ public class HibernateConfiguration {
 	@Value("${spring.datasource.url}")
 	private String url;
 
-	@Value("${spring.jpa.database-platform}")
+	@Value("${spring.datasource.jpa.properties.dialect}")
 	private String dialect;
+	
+	@Value("${spring.datasource.jpa.show-sql}")
+	private String showSQL;
+	
+	@Value("${spring.datasource.jpa.properties.format-sql}")
+	private String formatSQL;
+	
+	@Value("${spring.datasource.jpa.properties.use-sql-comments}")
+	private String commentsSQL;
 
 	@Primary
 	@Bean
@@ -68,7 +77,7 @@ public class HibernateConfiguration {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
-		em.setPackagesToScan("com.viverebrasil.financeira.domain.model");
+		em.setPackagesToScan("br.com.vinicius.model");
 		em.setPersistenceUnitName("default");
 		
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -97,9 +106,9 @@ public class HibernateConfiguration {
 		Properties properties = new Properties();
 
 		properties.put(Environment.DIALECT, dialect);
-		properties.put(Environment.SHOW_SQL, true);
-		properties.put(Environment.FORMAT_SQL, true);
-		properties.put(Environment.USE_SQL_COMMENTS, true);
+		properties.put(Environment.SHOW_SQL, showSQL);
+		properties.put(Environment.FORMAT_SQL, formatSQL);
+		properties.put(Environment.USE_SQL_COMMENTS, commentsSQL);
 		properties.put(Environment.HBM2DDL_AUTO, "");
 		properties.put(Environment.ENABLE_LAZY_LOAD_NO_TRANS, true);
 		// properties.put(Environment.USE_SECOND_LEVEL_CACHE, true);

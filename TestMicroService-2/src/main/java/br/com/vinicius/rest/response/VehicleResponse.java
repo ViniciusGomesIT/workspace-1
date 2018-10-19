@@ -1,24 +1,38 @@
 package br.com.vinicius.rest.response;
 
+import br.com.vinicius.model.VehicleBrand;
+
 public class VehicleResponse {
 
 	private Long id;
-	private String description;
-
-	public Long getId() {
-		return id;
-	}
+	private String modeloVeic;
+	private int anoFabricacao;
+	private int anoModelo;
+	private String cor;
+	private VehicleBrand marca;
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getDescription() {
-		return description;
+	public void setModeloVeic(String modeloVeic) {
+		this.modeloVeic = modeloVeic;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setAnoFabricacao(int anoFabricacao) {
+		this.anoFabricacao = anoFabricacao;
+	}
+
+	public void setAnoModelo(int anoModelo) {
+		this.anoModelo = anoModelo;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+
+	public void setMarca(VehicleBrand marca) {
+		this.marca = marca;
 	}
 
 }
