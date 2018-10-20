@@ -5,7 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"br.com.vinicius"})
+@ComponentScan(basePackages = {"br.com.vinicius", 
+		"br.com.vinicius.repository", 
+		"br.com.vinicius.service", 
+		"br.com.vinicius.controller"})
 public class TestMicroService2Application {
 
 	public static void main(String[] args) {

@@ -11,15 +11,15 @@ import org.springframework.stereotype.Controller;
 import br.com.vinicius.builder.VehicleBrandResponseBuilder;
 import br.com.vinicius.rest.resource.VehicleResource;
 import br.com.vinicius.rest.response.VehicleBrandResponse;
-import br.com.vinicius.service.impl.VehicleServiceImpl;
+import br.com.vinicius.service.VehicleService;
 
 @Controller
 public class VehicleControllerImpl implements VehicleResource {
 	
-	private VehicleServiceImpl service;
+	private VehicleService service;
 
 	@Inject
-	public VehicleControllerImpl(VehicleServiceImpl service) {
+	public VehicleControllerImpl(VehicleService service) {
 		this.service = service;
 	}
 

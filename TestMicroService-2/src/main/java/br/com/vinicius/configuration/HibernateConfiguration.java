@@ -71,6 +71,12 @@ public class HibernateConfiguration {
 	
 	@Value("${spring.datasource.jpa.properties.use-sql-comments}")
 	private String commentsSQL;
+	
+	@Value("${spring.datasource.use-legacy-date-time-code}")
+	private String useLegacyDatetimeCode;
+	
+	@Value("${spring.datasource.default-timezone}")
+	private String defaultTimeZone;
 
 	@Primary
 	@Bean
@@ -78,13 +84,14 @@ public class HibernateConfiguration {
 		BasicDataSource dataSource = new BasicDataSource();
 
 		dataSource.setDriverClassName(driverClassName);
-		dataSource.setUrl(url);
+		dataSource.setUrl(getFormatedUrl());
 		dataSource.setUsername(username);
 		dataSource.setPassword(password);
 
 		return dataSource;
 	}
 	
+
 	@Primary
 	@Bean
 	public EntityManager entityManager() {
@@ -138,4 +145,8 @@ public class HibernateConfiguration {
 		return properties;
 	}
 
+	private String getFormatedUrl() {		
+		return String.format(url, useLegacyDatetimeCode, defaultTimeZone);
+	}
+	
 }
