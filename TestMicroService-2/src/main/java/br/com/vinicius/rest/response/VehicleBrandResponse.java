@@ -1,7 +1,8 @@
 package br.com.vinicius.rest.response;
 
+@SuppressWarnings("unused")
 public class VehicleBrandResponse {
-
+	
 	private Long id;
 	private String nome;
 

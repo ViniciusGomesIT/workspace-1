@@ -2,6 +2,7 @@ package br.com.vinicius.rest.response;
 
 import br.com.vinicius.model.VehicleBrand;
 
+@SuppressWarnings("unused")
 public class VehicleResponse {
 
 	private Long id;

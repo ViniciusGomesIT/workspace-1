@@ -2,17 +2,11 @@ package br.com.vinicius.rest.resource;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.com.vinicius.rest.request.VehiclePersonRequest;
 import br.com.vinicius.rest.response.VehicleBrandResponse;
-import br.com.vinicius.rest.response.VehicleResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
