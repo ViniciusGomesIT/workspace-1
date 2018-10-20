@@ -24,7 +24,7 @@ public interface VehicleResource {
 	@ApiOperation(value = "Retorna a lista de veículos cadastrados")
 	@RequestMapping(value = "/vehicle-brand", 
 		method = RequestMethod.GET)
-	ResponseEntity<List<VehicleBrandResponse>> getAllVehicleBrand();
+	ResponseEntity<List<VehicleBrandResponse>> vehicleBrand();
 
 	//TODO realocar para o endpoint do usuário
 //	@ApiResponses({ 

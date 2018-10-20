@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import br.com.vinicius.model.VehicleBrand;
 import br.com.vinicius.repository.VehicleRepository;
 import br.com.vinicius.service.VehicleService;
 
-@Component
+@Service
 public class VehicleServiceImpl implements VehicleService {
 	
 	private VehicleRepository repository;

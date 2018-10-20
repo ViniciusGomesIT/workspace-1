@@ -24,7 +24,7 @@ public class VehicleControllerImpl implements VehicleResource {
 	}
 
 	@Override
-	public ResponseEntity<List<VehicleBrandResponse>> getAllVehicleBrand() {
+	public ResponseEntity<List<VehicleBrandResponse>> vehicleBrand() {
 		return new ResponseEntity<List<VehicleBrandResponse>>( VehicleBrandResponseBuilder
 					.vehicleBrandResponseBuilder()
 					.convert( service.getAllVehicleBrand() ), HttpStatus.OK );	

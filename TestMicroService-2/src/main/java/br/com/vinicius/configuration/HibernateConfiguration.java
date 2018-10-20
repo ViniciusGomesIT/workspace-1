@@ -45,7 +45,7 @@ which can serve as an implementation guide for other transaction strategies.
         transactionManagerRef = "transactionManager",
         //Base packages to scan for annotated >> components. << value() is an alias for (and mutually exclusive with) this attribute. 
         //Use basePackageClasses() for a type-safe alternative to String-based package names.
-        basePackages = {"com.viverebrasil.financeira.repository"})
+        basePackages = {"br.com.vinicius.repository"})
 public class HibernateConfiguration {
 	
 	@Value("${spring.datasource.username}")
