@@ -3,18 +3,14 @@ package br.com.vinicius.controller;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
 import br.com.vinicius.builder.VehicleBrandResponseBuilder;
-import br.com.vinicius.builder.VehicleResponseBuilder;
-import br.com.vinicius.rest.request.VehiclePersonRequest;
 import br.com.vinicius.rest.resource.VehicleResource;
 import br.com.vinicius.rest.response.VehicleBrandResponse;
-import br.com.vinicius.rest.response.VehicleResponse;
 import br.com.vinicius.service.impl.VehicleServiceImpl;
 
 @Controller

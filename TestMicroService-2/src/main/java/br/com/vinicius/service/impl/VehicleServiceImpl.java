@@ -13,8 +13,13 @@ import br.com.vinicius.service.VehicleService;
 @Component
 public class VehicleServiceImpl implements VehicleService {
 	
-	@Inject
 	private VehicleRepository repository;
+	
+	@Inject
+	public VehicleServiceImpl(VehicleRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public List<VehicleBrand> getAllVehicleBrand() {		
