@@ -8,15 +8,15 @@ import org.springframework.stereotype.Controller;
 
 import br.com.vinicius.model.User;
 import br.com.vinicius.rest.resource.UserResources;
-import br.com.vinicius.service.impl.UserServiceImpl;
+import br.com.vinicius.service.UserService;
 
 @Controller
 public class UserControllerImpl implements UserResources {
 
-	private UserServiceImpl service;
+	private UserService service;
 
 	@Inject
-	public UserControllerImpl(UserServiceImpl service) {
+	public UserControllerImpl(UserService service) {
 		this.service = service;
 	}
 
