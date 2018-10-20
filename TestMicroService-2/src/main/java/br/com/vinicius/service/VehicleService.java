@@ -6,7 +6,7 @@ import br.com.vinicius.model.VehicleBrand;
 
 public interface VehicleService {
 	
-	public List<VehicleBrand> getAllVehicleBrand();
+	List<VehicleBrand> getAllVehicleBrand();
 	
 	// TODO realocar para o endpoint do usuário
 //	public List<Vehicle> getPersonVehicles();
