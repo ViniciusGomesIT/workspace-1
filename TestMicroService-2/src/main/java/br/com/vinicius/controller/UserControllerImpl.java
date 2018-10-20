@@ -1,5 +1,7 @@
 package br.com.vinicius.controller;
 
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +16,12 @@ import br.com.vinicius.service.impl.UserServiceImpl;
 @Controller
 public class UserControllerImpl implements UserResources {
 
-	@Autowired
-	UserServiceImpl service;
+	private UserServiceImpl service;
+
+	@Inject
+	public UserControllerImpl(UserServiceImpl service) {
+		this.service = service;
+	}
 
 	@Override
 	public ResponseEntity<User> getUserInfo() {

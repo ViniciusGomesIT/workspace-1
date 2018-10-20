@@ -11,8 +11,7 @@ import br.com.vinicius.model.VehicleBrand;
 @Component
 public interface VehicleRepository extends JpaRepository<VehicleBrand, Long>{
 
-	@Query("SELECT FROM VehicleBrand")
-	List<VehicleBrand> findAllVehicleBrand();
+	List<VehicleBrand> findAll();
 	
 	// TODO realocar para o serviço do usuário
 //	@Query("SELECT")

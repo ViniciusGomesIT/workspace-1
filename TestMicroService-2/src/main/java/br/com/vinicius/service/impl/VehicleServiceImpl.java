@@ -17,13 +17,12 @@ public class VehicleServiceImpl implements VehicleService {
 	
 	@Inject
 	public VehicleServiceImpl(VehicleRepository repository) {
-		super();
 		this.repository = repository;
 	}
 
 	@Override
 	public List<VehicleBrand> getAllVehicleBrand() {		
-		return repository.findAllVehicleBrand();
+		return repository.findAll();
 	}
 	
 // TODO realocar para o endpoint de usuário

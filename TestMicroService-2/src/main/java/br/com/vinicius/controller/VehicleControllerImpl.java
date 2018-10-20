@@ -16,8 +16,12 @@ import br.com.vinicius.service.impl.VehicleServiceImpl;
 @Controller
 public class VehicleControllerImpl implements VehicleResource {
 	
+	private VehicleServiceImpl service;
+
 	@Inject
-	VehicleServiceImpl service;
+	public VehicleControllerImpl(VehicleServiceImpl service) {
+		this.service = service;
+	}
 
 	@Override
 	public ResponseEntity<List<VehicleBrandResponse>> getAllVehicleBrand() {
