@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import br.com.vinicius.entity.State;
 import br.com.vinicius.repository.StateRepository;
-import br.com.vinicius.repository.impl.StateRepositoryImpl;
 
 @Component("stateMassGenerator")
 public class StateMassGenerator {

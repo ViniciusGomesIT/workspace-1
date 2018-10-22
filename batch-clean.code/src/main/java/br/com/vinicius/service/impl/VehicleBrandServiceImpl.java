@@ -17,7 +17,7 @@ public class VehicleBrandServiceImpl implements VehicleBrandService {
 	private VehicleBrandRepository repository;
 	
 	private static final String STRING_FIELD_EMPTY = "";
-	private static final Long LONG_FIELD_EMPTY = 0L;
+//	private static final Long LONG_FIELD_EMPTY = 0L;
 
 	@Override
 	public VehicleBrand findVehicleBrandByIdOrName(VehicleBrand brand) {

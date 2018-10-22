@@ -1,12 +1,7 @@
 package br.com.vinicius.outros;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import br.com.vinicius.AppConfig;
-import br.com.vinicius.controller.FileController;
-import br.com.vinicius.service.impl.CityServiceImpl;
 import br.com.vinicius.util.GetContext;
 
 public class Principal {
