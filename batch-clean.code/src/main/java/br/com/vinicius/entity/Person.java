@@ -2,7 +2,6 @@ package br.com.vinicius.entity;
 
 import java.sql.Date;
 import java.util.List;
-import java.util.Optional;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
