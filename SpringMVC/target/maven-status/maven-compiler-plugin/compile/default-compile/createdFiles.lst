@@ -1,0 +1,4 @@
+com\vinicius\repository\ComonRepository.class
+com\vinicius\controller\MinutesController.class
+com\vinicius\model\Exercise.class
+com\vinicius\controller\WelcomeController.class
